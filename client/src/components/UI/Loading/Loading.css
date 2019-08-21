@@ -1,0 +1,50 @@
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.Modal p {
+  color: rgba(180, 180, 180, 0.5);
+  font-size: 2em;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+
+.Modal img {
+  width: 110px;
+  height: 82.5px;
+  animation: spin 1s ease forwards;
+}
+
+.Container {
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 450px) {
+  .Modal p {
+    font-size: 2.5em;
+  }
+  .Modal img {
+    width: 160px;
+    height: 120px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: scale(0.6);
+  }
+  to {
+    transform: scale(1);
+  }
+}

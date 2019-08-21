@@ -1,0 +1,59 @@
+.Modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 250;
+  background-color: rgba(0, 0, 0, 0.975);
+}
+
+.Loader {
+  display: block;
+  position: relative;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border: 3px solid transparent;
+  border-top-color: lightskyblue;
+  animation: spin 2s linear infinite;
+  z-index: 300;
+}
+
+.Loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: green;
+  animation: spin 3s linear infinite;
+}
+
+.Loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: darkorange;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

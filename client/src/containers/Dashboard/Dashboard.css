@@ -1,0 +1,93 @@
+.Dashboard {
+  display: flex;
+  flex-flow: column;
+}
+
+.storeStudent {
+  grid-area: storeStudent;
+}
+
+.showStudent {
+  grid-area: showStudent;
+}
+
+.editStudent {
+  grid-area: editStudent;
+}
+
+.deleteStudent {
+  grid-area: deleteStudent;
+}
+
+.Dashboard > div {
+  position: relative;
+  height: 230px;
+  margin: 20px;
+  color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  background: url("../../assets/background-home.jpeg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+
+.Overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.Dashboard i {
+  margin-top: 20px;
+}
+
+.Store {
+  color: rgba(84, 181, 216, 0.95);
+}
+
+.Show {
+  color: rgba(200, 200, 0, 0.95);
+}
+
+.Edit {
+  color: rgba(207, 136, 29, 0.95);
+}
+
+.Delete {
+  color: rgba(202, 20, 20, 0.95);
+}
+
+.Dashboard a {
+  display: block;
+  margin: 20px auto;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  width: 80%;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease;
+}
+
+.Dashboard a:hover,
+.Dashboard a:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 600px) {
+  .Dashboard {
+    display: grid;
+    grid-template-areas:
+      "storeStudent showStudent"
+      "editStudent deleteStudent";
+  }
+}

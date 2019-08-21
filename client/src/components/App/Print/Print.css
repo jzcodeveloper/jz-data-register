@@ -1,0 +1,35 @@
+.Form form {
+  margin-top: -60px;
+}
+
+.Form form div:first-child {
+  padding: 5px 0 0 0;
+}
+
+.Form h4 {
+  padding: 5px;
+}
+
+.Form {
+  padding-right: 5px;
+}
+
+.Form input {
+  margin-top: 0;
+  padding: 5px;
+}
+
+.Form label {
+  margin-top: 2.5px;
+  margin-bottom: 3px;
+  font-size: 0.8em;
+}
+
+.Form div {
+  padding: 2.5px;
+  grid-gap: 1px;
+}
+
+.Form div > div:nth-child(2) {
+  grid-template-columns: repeat(4, 1fr);
+}

@@ -1,0 +1,139 @@
+.SearchIcon {
+  position: fixed;
+  padding: 17.5px;
+  font-size: 1.6em;
+  right: 30px;
+  bottom: 30px;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: darkorange;
+  box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.7);
+  transition: opacity 1s ease;
+  opacity: 0.8;
+  z-index: 50;
+}
+
+.SearchIcon:hover {
+  opacity: 0.9;
+}
+
+.QuickResults {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 25;
+  max-height: 300px;
+  overflow-y: auto;
+  width: 100%;
+  border-bottom: 2px solid green;
+  box-sizing: border-box;
+}
+
+.QuickResult {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+  text-transform: capitalize;
+  border-bottom: 2px solid green;
+  background-color: white;
+  opacity: 0.9;
+}
+
+.QuickResult:last-of-type {
+  border-bottom: none;
+}
+
+.QuickResult:hover {
+  animation: resultAnimation 0.25s ease-out forwards;
+  opacity: 1;
+}
+
+.QuickResult img {
+  width: 50px;
+  height: 50px;
+  padding: 2px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+.QuickResult p {
+  padding: 10px;
+  margin: 0;
+}
+
+.Results {
+  display: flex;
+  flex-flow: column;
+  min-height: 80vh;
+}
+
+.Result {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  margin: 15px 15px 0 15px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  text-transform: capitalize;
+}
+
+.Result:last-of-type {
+  margin-bottom: 15px;
+}
+
+.Result:hover {
+  animation: resultAnimation 0.25s ease-out forwards;
+}
+
+.Result img {
+  width: 60px;
+  height: 60px;
+  padding: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+.Result p {
+  padding: 20px;
+  margin: 0;
+}
+
+@media (min-width: 600px) {
+  .Result img {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@keyframes resultAnimation {
+  0% {
+    background-image: radial-gradient(
+      rgb(255, 255, 255) 20%,
+      rgb(255, 255, 255) 100%
+    );
+  }
+  25% {
+    background-image: radial-gradient(
+      rgb(255, 228, 177) 20%,
+      rgb(255, 224, 185) 100%
+    );
+  }
+  50% {
+    background-image: radial-gradient(
+      rgb(255, 209, 122) 20%,
+      rgb(255, 197, 125) 100%
+    );
+  }
+  75% {
+    background-image: radial-gradient(
+      rgb(255, 189, 66) 20%,
+      rgb(255, 168, 61) 100%
+    );
+  }
+  100% {
+    background-image: radial-gradient(orange 20%, darkorange 100%);
+  }
+}

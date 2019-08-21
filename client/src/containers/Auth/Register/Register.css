@@ -1,0 +1,91 @@
+.Register {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Register form {
+  flex: 1;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.Register form > div {
+  text-align: center;
+}
+
+.Register form > div > img {
+  width: 130px;
+  border-radius: 50%;
+}
+
+.Register span {
+  display: block;
+  text-align: center;
+}
+
+.Register input {
+  display: block;
+  outline: none;
+  width: 90%;
+  padding: 12px;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: dimgray;
+  margin: 10px auto 0 auto;
+  font-size: 0.9em;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s;
+}
+
+.Register input:focus {
+  border: 2px solid lightblue;
+  box-shadow: 0 0 5px lightblue;
+}
+
+.Register input.Invalid {
+  border: 2px solid rgb(252, 135, 135);
+  box-shadow: 0 0 5px rgb(252, 135, 135);
+}
+
+.Register p {
+  color: red;
+  margin: 0;
+  padding: 5px 15px 0 40px;
+  font-size: 0.7em;
+}
+
+.Register button {
+  text-transform: uppercase;
+  outline: none;
+  background-color: rgb(51, 178, 224);
+  font-weight: bold;
+  font-size: 0.9em;
+  border: 2px solid transparent;
+  color: white;
+  cursor: pointer;
+  margin: 10px auto 0 auto;
+  width: 90%;
+  padding: 12px;
+  border-radius: 5px;
+  transition: transform 0.1s;
+}
+
+.Register button:hover,
+.Register button:active {
+  background-color: rgb(73, 195, 240);
+}
+
+.Register button:active {
+  transform: scale(1.02);
+}
+
+@media (min-width: 600px) {
+  .Register form {
+    width: 100%;
+  }
+}

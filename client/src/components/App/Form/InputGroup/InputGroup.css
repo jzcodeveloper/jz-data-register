@@ -1,0 +1,40 @@
+.Wrapper {
+  display: flex;
+  flex-flow: column;
+}
+
+.Wrapper label {
+  padding-left: 5px;
+}
+
+.Wrapper input {
+  outline: none;
+  width: 100%;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: dimgray;
+  font-size: 0.9em;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.Wrapper input:focus {
+  border: 2px solid lightblue;
+  box-shadow: 0 0 5px lightblue;
+}
+
+.Wrapper input:invalid {
+  border: 2px solid rgb(252, 135, 135);
+  box-shadow: 0 0 5px rgb(252, 135, 135);
+}
+
+.Wrapper input[type="date"] {
+  background-color: white;
+}
+.Wrapper input[list] {
+  text-transform: none;
+}
+.Wrapper input[type="file"] {
+  width: 280px;
+  margin-top: 20px;
+}
