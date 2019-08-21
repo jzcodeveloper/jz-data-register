@@ -1,4 +1,4 @@
-const { writeFileSync, unlinkSync, readdirSync } = require("fs");
+const { writeFile, unlink, readdir } = require("fs").promises;
 const { join } = require("path");
 
 const Student = require("../models/Student");
@@ -75,7 +75,7 @@ exports.create = async (req, res) => {
         const fileExt = file.originalname.split(".")[1].toLowerCase();
         const path = `${filePath}${fileName}.${fileExt}`;
 
-        writeFileSync(path, photo, "base64");
+        await writeFile(path, photo, "base64");
 
         // https://jz-data-register.herokuapp.com/api/studentPhoto/:fileName
         newStudent.photo = `${domainURL}${fileName}.${fileExt}`;
@@ -178,7 +178,7 @@ exports.update = async (req, res) => {
       student.parent.liveWithKid = body.liveWithKid;
 
       if (photo) {
-        const files = readdirSync(filePath);
+        const files = await readdir(filePath);
         // Name of the image that will be uploaded
         const fileName = student._id.toString();
         // Extension of the image that will be uploaded
@@ -193,21 +193,21 @@ exports.update = async (req, res) => {
 
             if (fileName === fileName2) {
               if (fileExt === fileExt2) {
-                writeFileSync(path, photo, "base64");
+                await writeFile(path, photo, "base64");
               } else {
-                unlinkSync(`${filePath}${files[i]}`);
-                writeFileSync(path, photo, "base64");
+                await unlink(`${filePath}${files[i]}`);
+                await writeFile(path, photo, "base64");
               }
 
               break;
             }
 
             if (i === files.length - 1 && fileName !== fileName2) {
-              writeFileSync(path, photo, "base64");
+              await writeFile(path, photo, "base64");
             }
           }
         } else {
-          writeFileSync(path, photo, "base64");
+          await writeFile(path, photo, "base64");
         }
 
         // https://jz-data-register.herokuapp.com/api/studentPhoto/:fileName
@@ -231,7 +231,7 @@ exports.delete = async (req, res) => {
     if (!student) {
       res.status(404).json({ message: "This student does not exist" });
     } else {
-      const files = readdirSync(filePath);
+      const files = await readdir(filePath);
       // Name of the image to be compared
       const fileName = student._id.toString();
 
@@ -240,7 +240,7 @@ exports.delete = async (req, res) => {
         const [fileName2] = files[i].split(".");
 
         if (fileName === fileName2) {
-          unlinkSync(`${filePath}${files[i]}`);
+          await unlink(`${filePath}${files[i]}`);
 
           break;
         }
