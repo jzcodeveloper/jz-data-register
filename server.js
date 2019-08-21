@@ -25,10 +25,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const fs = require("fs");
-const folders = fs.readdirSync(path.join(__dirname, "."));
-console.log(folders);
-
 const PORT = process.env.PORT || 5002;
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
