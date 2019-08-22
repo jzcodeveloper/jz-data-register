@@ -260,7 +260,7 @@ const Form = ({
           <InputGroup
             type="text"
             name="allergicTo"
-            labelText="Alergic To"
+            labelText="Allergic To"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
             disabled={disabled}
