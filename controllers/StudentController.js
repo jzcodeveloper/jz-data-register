@@ -26,7 +26,7 @@ exports.create = async (req, res) => {
         identification: body.identification,
         sex: body.sex,
         birthday: body.birthday,
-        birthdayPlace: body.birthdayPlace,
+        birthplace: body.birthplace,
         municipality: body.municipality,
         country: body.country,
         age: body.age,
@@ -47,8 +47,8 @@ exports.create = async (req, res) => {
           identification: body.representID,
           birthday: body.representBirthday,
           age: body.representAge,
-          civilState: body.representCivilState,
-          ocupation: body.representOcupation,
+          maritalStatus: body.representMaritalStatus,
+          occupation: body.representOccupation,
           company: body.representCompany,
           direction: body.representDirection,
           phoneNumber1: body.representPhoneNumber1,
@@ -61,8 +61,8 @@ exports.create = async (req, res) => {
           identification: body.parentIdentification,
           birthday: body.parentBirthday,
           company: body.parentCompany,
-          civilState: body.parentCivilState,
-          ocupation: body.parentOcupation,
+          maritalStatus: body.parentMaritalStatus,
+          occupation: body.parentOccupation,
           direction: body.parentDirection,
           phoneNumber1: body.parentPhoneNumber1,
           phoneNumber2: body.parentPhoneNumber2,
@@ -157,8 +157,8 @@ exports.update = async (req, res) => {
       student.represent.identification = body.representID;
       student.represent.birthday = body.representBirthday;
       student.represent.age = body.representAge;
-      student.represent.civilState = body.representCivilState;
-      student.represent.ocupation = body.representOcupation;
+      student.represent.maritalStatus = body.representMaritalStatus;
+      student.represent.occupation = body.representOccupation;
       student.represent.company = body.representCompany;
       student.represent.direction = body.representDirection;
       student.represent.phoneNumber1 = body.representPhoneNumber1;
@@ -170,8 +170,8 @@ exports.update = async (req, res) => {
       student.parent.identification = body.parentIdentification;
       student.parent.birthday = body.parentBirthday;
       student.parent.company = body.parentCompany;
-      student.parent.civilState = body.parentCivilState;
-      student.parent.ocupation = body.parentOcupation;
+      student.parent.maritalStatus = body.parentMaritalStatus;
+      student.parent.occupation = body.parentOccupation;
       student.parent.direction = body.parentDirection;
       student.parent.phoneNumber1 = body.parentPhoneNumber1;
       student.parent.phoneNumber2 = body.parentPhoneNumber2;

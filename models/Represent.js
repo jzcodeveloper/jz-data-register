@@ -3,12 +3,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const validSexType = {
-  values: ["Masculino", "Femenino"],
+  values: ["Male", "Female"],
   message: "{VALUE} is not a valid sex type"
 };
 
-const validCivilState = {
-  values: ["Casado/a", "Soltero/a", "Viudo/a"],
+const validMaritalStatus = {
+  values: ["Married", "Single", "Widowed", "Divorced"],
   message: "{VALUE} is not a valid civil state"
 };
 
@@ -39,15 +39,15 @@ const representSchema = new Schema({
     required: [true, "The age is needed"]
   },
 
-  civilState: {
+  maritalStatus: {
     type: String,
     required: [true, "The civil state is needed"],
-    enum: validCivilState
+    enum: validMaritalStatus
   },
 
-  ocupation: {
+  occupation: {
     type: String,
-    required: [true, "The ocupation field is needed"]
+    required: [true, "The occupation field is needed"]
   },
 
   company: {

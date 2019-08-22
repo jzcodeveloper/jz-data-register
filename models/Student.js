@@ -5,7 +5,7 @@ const Represent = require("./Represent");
 const Parent = require("./Parent");
 
 const validSexTypes = {
-  values: ["Masculino", "Femenino"],
+  values: ["Male", "Female"],
   message: "{VALUE} is not a valid sex type"
 };
 
@@ -35,9 +35,9 @@ const studentSchema = new Schema({
     required: [true, "The bithday field is needed"]
   },
 
-  birthdayPlace: {
+  birthplace: {
     type: String,
-    required: [true, "The birthday place field is needed"]
+    required: [true, "The birthplace field is needed"]
   },
 
   municipality: {
@@ -66,8 +66,8 @@ const studentSchema = new Schema({
   },
 
   shirtSize: {
-    type: Number,
-    required: [true, "The size of the shit field is needed"]
+    type: String,
+    required: [true, "The size of the shirt field is needed"]
   },
 
   pantSize: {

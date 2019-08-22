@@ -2,14 +2,14 @@ const mongoose = require("mongoose");
 //const uniqueValidator = require("mongoose-unique-validator");
 const Schema = mongoose.Schema;
 
-const validCivilState = {
-  values: ["Casado/a", "Soltero/a", "Viudo/a"],
-  message: "{VALUE} is not a valid civil state"
+const validSexType = {
+  values: ["Male", "Female"],
+  message: "{VALUE} is not a valid sex type"
 };
 
-const validSexType = {
-  values: ["Masculino", "Femenino"],
-  message: "{VALUE} is not a valid sex type"
+const validMaritalStatus = {
+  values: ["Married", "Single", "Widowed", "Divorced"],
+  message: "{VALUE} is not a valid marital status"
 };
 
 const parentSchema = new Schema({
@@ -39,15 +39,15 @@ const parentSchema = new Schema({
     required: [true, "The company field is needed"]
   },
 
-  civilState: {
+  maritalStatus: {
     type: String,
-    enum: validCivilState,
-    required: [true, "The civil state field is needed"]
+    enum: validMaritalStatus,
+    required: [true, "The marital status field is needed"]
   },
 
-  ocupation: {
+  occupation: {
     type: String,
-    required: [true, "The ocupation field is needed"]
+    required: [true, "The occupation field is needed"]
   },
 
   direction: {

@@ -49,236 +49,222 @@ const Form = ({
         </div>
         <div className={classes.Data}>
           <datalist id="sex">
-            <option value="Masculino" label="Sexo" />
-            <option value="Femenino" label="Sexo" />
+            <option value="Male" label="Sex" />
+            <option value="Female" label="Sex" />
           </datalist>
           <datalist id="yesno">
-            <option value="Si" label="¿Si/No?" />
-            <option value="No" label="¿Si/No?" />
+            <option value="Yes" label="Lives with Parents?" />
+            <option value="No" label="Lives with Parents?" />
           </datalist>
-          <datalist id="civil">
-            <option value="Casado/a" label="¿Si/No?" />
-            <option value="Soltero/a" label="¿Si/No?" />
-            <option value="Viudo/a" label="¿Si/No?" />
+          <datalist id="maritalstatus">
+            <option value="Married" label="Marital Status" />
+            <option value="Single" label="Marital Status" />
+            <option value="Widowed" label="Marital Status" />
+            <option value="Divorced" label="Marital Status" />
+          </datalist>
+          <datalist id="size">
+            <option value="XS" label="Shirt Size" />
+            <option value="S" label="Shirt Size" />
+            <option value="M" label="Shirt Size" />
+            <option value="L" label="Shirt Size" />
+            <option value="XL" label="Shirt Size" />
           </datalist>
 
           {/*<!-- Student's Data -->*/}
           <InputGroup
             type="text"
             name="name"
-            labelText="Nombres Y Apellidos"
+            labelText="Names and Surnames"
             pattern="[A-Za-z ]{1,}"
             maxLength="35"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.name : ""}
           />
           <InputGroup
             type="number"
             name="identification"
-            labelText="Cédula"
+            labelText="Identification Card"
             pattern="[0-9]{1,}"
             maxLength="8"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.identification : ""}
           />
           <InputGroup
             type="text"
             name="sex"
             list="sex"
-            labelText="Sexo"
-            max="9"
-            required
-            autoComplete="off"
+            labelText="Sex"
+            pattern="Male|Female"
+            maxLength="6"
             disabled={disabled}
+            required
             defaultValue={data ? data.sex : ""}
           />
           <InputGroup
             type="date"
             name="birthday"
-            labelText="Fecha de Nacimiento"
-            required
-            autoComplete="off"
+            labelText="Birthday"
             disabled={disabled}
+            required
             defaultValue={data ? formatDate(data.birthday) : ""}
           />
           <InputGroup
             type="text"
-            name="birthdayPlace"
-            labelText="Lugar de Nacimiento"
+            name="birthplace"
+            labelText="Birthplace"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
-            required
-            autoComplete="off"
             disabled={disabled}
-            defaultValue={data ? data.birthdayPlace : ""}
+            required
+            defaultValue={data ? data.birthplace : ""}
           />
           <InputGroup
             type="text"
             name="municipality"
-            labelText="Municipio"
+            labelText="Municipality"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.municipality : ""}
           />
           <InputGroup
             type="text"
             name="country"
-            labelText="Entidad Federal / País"
+            labelText="Country"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.country : ""}
           />
           <InputGroup
             type="number"
             name="age"
-            labelText="Edad"
+            labelText="Age"
             pattern="[0-9]{1,}"
             maxLength="3"
             min="0"
             max="120"
             step="1"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.age : ""}
           />
           <InputGroup
             type="number"
             name="weight"
-            labelText="Peso"
+            labelText="Weight (kg)"
             pattern="[0-9]{1,}"
             maxLength="3"
             min="0"
             max="500"
             step="1"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.weight : ""}
           />
           <InputGroup
             type="number"
             name="height"
-            labelText="Estatura"
+            labelText="Height (cm)"
             pattern="[0-9]{1,}"
             maxLength="3"
             min="0"
             max="500"
             step="1"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.height : ""}
           />
           <InputGroup
-            type="number"
+            type="text"
             name="shirtSize"
             list="size"
-            labelText="Talla de Camisa"
-            pattern="[0-9]{1,}"
+            labelText="Shirt Size"
+            pattern="XS|S|M|L|XL"
             maxLength="2"
-            min="0"
-            max="500"
-            step="1"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.shirtSize : ""}
           />
           <InputGroup
             type="number"
             name="pantSize"
-            list="size"
-            labelText="Talla de Pantalón"
+            labelText="Pants Size"
             pattern="[0-9]{1,}"
             maxLength="2"
             min="0"
-            max="500"
+            max="50"
             step="1"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.pantSize : ""}
           />
           <InputGroup
             type="number"
             name="shoeSize"
-            list="size"
-            labelText="Talla de Zapato"
+            labelText="Shoe Size"
             pattern="[0-9]{1,}"
             maxLength="2"
             min="0"
-            max="500"
+            max="50"
             step="1"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.shoeSize : ""}
           />
           <InputGroup
             type="text"
             name="liveWithParents"
             list="yesno"
-            labelText="¿Si/No?"
-            pattern="[A-Za-z]{1,}"
-            maxLength="2"
-            required
-            autoComplete="off"
+            labelText="Lives with Parents?"
+            pattern="Yes|No"
+            maxLength="3"
             disabled={disabled}
+            required
             defaultValue={data ? data.liveWithParents : ""}
           />
           <InputGroup
             type="text"
             name="direction"
-            labelText="Dirección"
+            labelText="Address"
             pattern="[A-Za-z0-9 -.,]{1,}"
             maxLength="30"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.direction : ""}
           />
           <InputGroup
             type="number"
             name="phoneNumber"
-            labelText="Teléfono"
+            labelText="Phone Number"
             pattern="[0-9]{1,}"
             maxLength="11"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.phoneNumber : ""}
           />
           <InputGroup
             type="text"
             name="impedimentToSports"
-            labelText="Impedimento A Deportes"
+            labelText="Impediment To Sports"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.impedimentToSports : ""}
           />
           <InputGroup
             type="text"
             name="alergicTo"
-            labelText="Alérgico A"
+            labelText="Alergic To"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.alergicTo : ""}
           />
           <div />
@@ -294,123 +280,112 @@ const Form = ({
           <InputGroup
             type="text"
             name="parentName"
-            labelText="Nombres Y Apellidos"
+            labelText="Names and Surnames"
             pattern="[A-Za-z ]{1,}"
             maxLength="35"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.parent.name : ""}
           />
           <InputGroup
             type="text"
             name="parentSex"
             list="sex"
-            labelText="Sexo"
-            pattern="[A-Za-z]{1,}"
-            maxLength="9"
-            required
-            autoComplete="off"
+            labelText="Sex"
+            pattern="Male|Female"
+            maxLength="6"
             disabled={disabled}
+            required
             defaultValue={data ? data.parent.sex : ""}
           />
           <InputGroup
             type="number"
             name="parentIdentification"
-            labelText="Cédula"
+            labelText="Identification Card"
             pattern="[0-9]{1,}"
             maxLength="8"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.parent.identification : ""}
           />
           <InputGroup
             type="date"
             name="parentBirthday"
-            labelText="Fecha de Nacimiento"
-            required
-            autoComplete="off"
+            labelText="Birthday"
             disabled={disabled}
+            required
             defaultValue={data ? formatDate(data.parent.birthday) : ""}
           />
           <InputGroup
             type="text"
             name="parentCompany"
-            labelText="Empresa dónde labora"
+            labelText="Company"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.parent.company : ""}
           />
           <InputGroup
             type="text"
-            name="parentCivilState"
-            list="civil"
-            labelText="Estado Civil"
-            pattern="[A-Za-z/]{1,}"
-            maxLength="9"
-            required
-            autoComplete="off"
+            name="parentMaritalStatus"
+            list="maritalstatus"
+            labelText="Marital Status"
+            pattern="Married|Single|Widowed|Divorced"
+            maxLength="7"
             disabled={disabled}
-            defaultValue={data ? data.parent.civilState : ""}
+            required
+            defaultValue={data ? data.parent.maritalStatus : ""}
           />
           <InputGroup
             type="text"
-            name="parentOcupation"
-            labelText="Ocupación"
+            name="parentOccupation"
+            labelText="Occupation"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
-            required
-            autoComplete="off"
             disabled={disabled}
-            defaultValue={data ? data.parent.ocupation : ""}
+            required
+            defaultValue={data ? data.parent.occupation : ""}
           />
           <InputGroup
             type="text"
             name="parentDirection"
-            labelText="Dirección de Habitación"
+            labelText="Address"
             pattern="[A-Za-z0-9 -.,]{1,}"
             maxLength="30"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.parent.direction : ""}
           />
           <InputGroup
             type="number"
             name="parentPhoneNumber1"
-            labelText="Teléfono 1"
+            labelText="Phone Number 1"
             pattern="[0-9]{1,}"
             maxLength="11"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.parent.phoneNumber1 : ""}
           />
           <InputGroup
             type="number"
             name="parentPhoneNumber2"
-            labelText="Teléfono 2"
+            labelText="Phone Number 2"
             pattern="[0-9]{1,}"
             maxLength="11"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.parent.phoneNumber2 : ""}
           />
           <InputGroup
             type="text"
             name="liveWithKid"
             list="yesno"
-            labelText="¿Si/No?"
-            pattern="[A-Za-z]{1,}"
-            maxLength="2"
-            required
-            autoComplete="off"
+            labelText="Lives with Kid?"
+            pattern="Yes|No"
+            maxLength="3"
             disabled={disabled}
+            required
             defaultValue={data ? data.parent.liveWithKid : ""}
           />
           <div />
@@ -425,125 +400,114 @@ const Form = ({
           <InputGroup
             type="text"
             name="representName"
-            labelText="Nombres Y Apellidos"
+            labelText="Names and Surnames"
             pattern="[A-Za-z ]{1,}"
             maxLength="35"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.represent.name : ""}
           />
           <InputGroup
             type="text"
             name="representSex"
             list="sex"
-            labelText="Sexo"
-            pattern="[A-Za-z ]{1,}"
-            maxLength="9"
-            required
-            autoComplete="off"
+            labelText="Sex"
+            pattern="Male|Female"
+            maxLength="6"
             disabled={disabled}
+            required
             defaultValue={data ? data.represent.sex : ""}
           />
           <InputGroup
             type="number"
             name="representID"
-            labelText="Cédula"
+            labelText="Identification Card"
             pattern="[0-9]{1,}"
             maxLength="8"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.represent.identification : ""}
           />
           <InputGroup
             type="date"
             name="representBirthday"
-            labelText="Fecha de Nacimiento"
-            required
-            autoComplete="off"
+            labelText="Birthday"
             disabled={disabled}
+            required
             defaultValue={data ? formatDate(data.represent.birthday) : ""}
           />
           <InputGroup
             type="number"
             name="representAge"
-            labelText="Edad"
+            labelText="Age"
             pattern="[0-9]{1,}"
             maxLength="3"
             min="0"
             max="120"
             step="1"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.represent.age : ""}
           />
           <InputGroup
             type="text"
-            name="representCivilState"
-            list="civil"
-            labelText="Estado Civil"
-            pattern="[A-Za-z/]{1,}"
-            maxLength="9"
-            required
-            autoComplete="off"
+            name="representMaritalStatus"
+            list="maritalstatus"
+            labelText="Marital Status"
+            pattern="Married|Single|Widowed|Divorced"
+            maxLength="7"
             disabled={disabled}
-            defaultValue={data ? data.represent.civilState : ""}
+            required
+            defaultValue={data ? data.represent.maritalStatus : ""}
           />
           <InputGroup
             type="text"
-            name="representOcupation"
-            labelText="Ocupación"
+            name="representOccupation"
+            labelText="Occupation"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
-            required
-            autoComplete="off"
             disabled={disabled}
-            defaultValue={data ? data.represent.ocupation : ""}
+            required
+            defaultValue={data ? data.represent.occupation : ""}
           />
           <InputGroup
             type="text"
             name="representCompany"
-            labelText="Empresa"
+            labelText="Company"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.represent.company : ""}
           />
           <InputGroup
             type="text"
             name="representDirection"
-            labelText="Dirección de Habitación"
+            labelText="Address"
             pattern="[A-Za-z0-9 -.,]{1,}"
             maxLength="30"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.represent.direction : ""}
           />
           <InputGroup
             type="number"
             name="representPhoneNumber1"
-            labelText="Teléfono 1"
+            labelText="Phone Number 1"
             pattern="[0-9]{1,}"
             maxLength="11"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.represent.phoneNumber1 : ""}
           />
           <InputGroup
             type="number"
             name="representPhoneNumber2"
-            labelText="Teléfono 2"
+            labelText="Phone Number 2"
             pattern="[0-9]{1,}"
             maxLength="11"
-            required
-            autoComplete="off"
             disabled={disabled}
+            required
             defaultValue={data ? data.represent.phoneNumber2 : ""}
           />
           <div />

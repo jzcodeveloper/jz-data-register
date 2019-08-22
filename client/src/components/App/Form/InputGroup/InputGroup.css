@@ -7,7 +7,8 @@
   padding-left: 5px;
 }
 
-.Wrapper input {
+.Wrapper input,
+.Wrapper select {
   outline: none;
   width: 100%;
   border: 2px solid lightgray;
@@ -18,12 +19,14 @@
   transition: all 0.3s ease;
 }
 
-.Wrapper input:focus {
+.Wrapper input:focus,
+.Wrapper select:focus {
   border: 2px solid lightblue;
   box-shadow: 0 0 5px lightblue;
 }
 
-.Wrapper input:invalid {
+.Wrapper input:invalid,
+.Wrapper select:invalid {
   border: 2px solid rgb(252, 135, 135);
   box-shadow: 0 0 5px rgb(252, 135, 135);
 }
@@ -36,5 +39,5 @@
 }
 .Wrapper input[type="file"] {
   width: 280px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
