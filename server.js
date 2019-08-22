@@ -10,7 +10,7 @@ connectDB();
 
 //Init Middlewares
 app.use(responseTime());
-app.use(express.json({ extended: false }));
+app.use(express.json({ extended: true }));
 
 //Define routes
 app.use("/api", require("./routes/index"));

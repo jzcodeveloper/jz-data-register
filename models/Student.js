@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 //const uniqueValidator = require("mongoose-unique-validator");
 const Schema = mongoose.Schema;
-const Represent = require("./Represent");
 const Parent = require("./Parent");
+const Represent = require("./Represent");
 
 const validSexTypes = {
   values: ["Male", "Female"],
@@ -80,14 +80,14 @@ const studentSchema = new Schema({
     required: [true, "The size of the shoes field is needed"]
   },
 
-  liveWithParents: {
+  livesWithParents: {
     type: String,
-    required: [true, "The live with parents field is needed"]
+    required: [true, "The lives with parents field is needed"]
   },
 
-  direction: {
+  address: {
     type: String,
-    required: [true, "The direction field is needed"]
+    required: [true, "The address field is needed"]
   },
 
   phoneNumber: {
@@ -110,8 +110,8 @@ const studentSchema = new Schema({
     default: Date.now
   },
 
-  represent: Represent.schema,
-  parent: Parent.schema
+  parent: Parent.schema,
+  represent: Represent.schema
 });
 
 //studentSchema.plugin(uniqueValidator, {message: "{PATH} must be unique"});

@@ -50,9 +50,9 @@ const parentSchema = new Schema({
     required: [true, "The occupation field is needed"]
   },
 
-  direction: {
+  address: {
     type: String,
-    required: [true, "The direction field is needed"]
+    required: [true, "The address field is needed"]
   },
 
   phoneNumber1: {
@@ -65,9 +65,9 @@ const parentSchema = new Schema({
     required: false
   },
 
-  liveWithKid: {
+  livesWithKid: {
     type: String,
-    required: [true, "The live with kid field is needed"]
+    required: [true, "The lives with kid field is needed"]
   }
 });
 

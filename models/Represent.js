@@ -55,9 +55,9 @@ const representSchema = new Schema({
     required: [true, "The company field is needed"]
   },
 
-  direction: {
+  address: {
     type: String,
-    required: [true, "The direction field is needed"]
+    required: [true, "The address field is needed"]
   },
 
   phoneNumber1: {

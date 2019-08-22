@@ -73,7 +73,7 @@ const Form = ({
           {/*<!-- Student's Data -->*/}
           <InputGroup
             type="text"
-            name="name"
+            name="student.name"
             labelText="Names and Surnames"
             pattern="[A-Za-z ]{1,}"
             maxLength="35"
@@ -83,7 +83,7 @@ const Form = ({
           />
           <InputGroup
             type="number"
-            name="identification"
+            name="student.identification"
             labelText="Identification Card"
             pattern="[0-9]{1,}"
             maxLength="8"
@@ -93,7 +93,7 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="sex"
+            name="student.sex"
             list="sex"
             labelText="Sex"
             pattern="Male|Female"
@@ -104,7 +104,7 @@ const Form = ({
           />
           <InputGroup
             type="date"
-            name="birthday"
+            name="student.birthday"
             labelText="Birthday"
             disabled={disabled}
             required
@@ -112,7 +112,7 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="birthplace"
+            name="student.birthplace"
             labelText="Birthplace"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
@@ -122,7 +122,7 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="municipality"
+            name="student.municipality"
             labelText="Municipality"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
@@ -132,7 +132,7 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="country"
+            name="student.country"
             labelText="Country"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
@@ -142,7 +142,7 @@ const Form = ({
           />
           <InputGroup
             type="number"
-            name="age"
+            name="student.age"
             labelText="Age"
             pattern="[0-9]{1,}"
             maxLength="3"
@@ -155,7 +155,7 @@ const Form = ({
           />
           <InputGroup
             type="number"
-            name="weight"
+            name="student.weight"
             labelText="Weight (kg)"
             pattern="[0-9]{1,}"
             maxLength="3"
@@ -168,7 +168,7 @@ const Form = ({
           />
           <InputGroup
             type="number"
-            name="height"
+            name="student.height"
             labelText="Height (cm)"
             pattern="[0-9]{1,}"
             maxLength="3"
@@ -181,7 +181,7 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="shirtSize"
+            name="student.shirtSize"
             list="size"
             labelText="Shirt Size"
             pattern="XS|S|M|L|XL"
@@ -192,7 +192,7 @@ const Form = ({
           />
           <InputGroup
             type="number"
-            name="pantSize"
+            name="student.pantSize"
             labelText="Pants Size"
             pattern="[0-9]{1,}"
             maxLength="2"
@@ -205,7 +205,7 @@ const Form = ({
           />
           <InputGroup
             type="number"
-            name="shoeSize"
+            name="student.shoeSize"
             labelText="Shoe Size"
             pattern="[0-9]{1,}"
             maxLength="2"
@@ -218,28 +218,28 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="liveWithParents"
+            name="student.livesWithParents"
             list="yesno"
             labelText="Lives with Parents?"
             pattern="Yes|No"
             maxLength="3"
             disabled={disabled}
             required
-            defaultValue={data ? data.liveWithParents : ""}
+            defaultValue={data ? data.livesWithParents : ""}
           />
           <InputGroup
             type="text"
-            name="direction"
+            name="student.address"
             labelText="Address"
             pattern="[A-Za-z0-9 -.,]{1,}"
             maxLength="30"
             disabled={disabled}
             required
-            defaultValue={data ? data.direction : ""}
+            defaultValue={data ? data.address : ""}
           />
           <InputGroup
             type="number"
-            name="phoneNumber"
+            name="student.phoneNumber"
             labelText="Phone Number"
             pattern="[0-9]{1,}"
             maxLength="11"
@@ -249,7 +249,7 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="impedimentToSports"
+            name="student.impedimentToSports"
             labelText="Impediment To Sports"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
@@ -259,7 +259,7 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="allergicTo"
+            name="student.allergicTo"
             labelText="Allergic To"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
@@ -279,7 +279,7 @@ const Form = ({
           {/*<!-- Parent's Data -->*/}
           <InputGroup
             type="text"
-            name="parentName"
+            name="parent.name"
             labelText="Names and Surnames"
             pattern="[A-Za-z ]{1,}"
             maxLength="35"
@@ -289,7 +289,7 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="parentSex"
+            name="parent.sex"
             list="sex"
             labelText="Sex"
             pattern="Male|Female"
@@ -300,7 +300,7 @@ const Form = ({
           />
           <InputGroup
             type="number"
-            name="parentIdentification"
+            name="parent.identification"
             labelText="Identification Card"
             pattern="[0-9]{1,}"
             maxLength="8"
@@ -310,7 +310,7 @@ const Form = ({
           />
           <InputGroup
             type="date"
-            name="parentBirthday"
+            name="parent.birthday"
             labelText="Birthday"
             disabled={disabled}
             required
@@ -318,7 +318,7 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="parentCompany"
+            name="parent.company"
             labelText="Company"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
@@ -328,7 +328,7 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="parentMaritalStatus"
+            name="parent.maritalStatus"
             list="maritalstatus"
             labelText="Marital Status"
             pattern="Married|Single|Widowed|Divorced"
@@ -339,7 +339,7 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="parentOccupation"
+            name="parent.occupation"
             labelText="Occupation"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
@@ -349,17 +349,17 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="parentDirection"
+            name="parent.address"
             labelText="Address"
             pattern="[A-Za-z0-9 -.,]{1,}"
             maxLength="30"
             disabled={disabled}
             required
-            defaultValue={data ? data.parent.direction : ""}
+            defaultValue={data ? data.parent.address : ""}
           />
           <InputGroup
             type="number"
-            name="parentPhoneNumber1"
+            name="parent.phoneNumber1"
             labelText="Phone Number 1"
             pattern="[0-9]{1,}"
             maxLength="11"
@@ -369,7 +369,7 @@ const Form = ({
           />
           <InputGroup
             type="number"
-            name="parentPhoneNumber2"
+            name="parent.phoneNumber2"
             labelText="Phone Number 2"
             pattern="[0-9]{1,}"
             maxLength="11"
@@ -379,14 +379,14 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="liveWithKid"
+            name="parent.livesWithKid"
             list="yesno"
             labelText="Lives with Kid?"
             pattern="Yes|No"
             maxLength="3"
             disabled={disabled}
             required
-            defaultValue={data ? data.parent.liveWithKid : ""}
+            defaultValue={data ? data.parent.livesWithKid : ""}
           />
           <div />
         </div>
@@ -399,7 +399,7 @@ const Form = ({
           {/*<!-- Representative's Data -->*/}
           <InputGroup
             type="text"
-            name="representName"
+            name="represent.name"
             labelText="Names and Surnames"
             pattern="[A-Za-z ]{1,}"
             maxLength="35"
@@ -409,7 +409,7 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="representSex"
+            name="represent.sex"
             list="sex"
             labelText="Sex"
             pattern="Male|Female"
@@ -420,7 +420,7 @@ const Form = ({
           />
           <InputGroup
             type="number"
-            name="representID"
+            name="represent.identification"
             labelText="Identification Card"
             pattern="[0-9]{1,}"
             maxLength="8"
@@ -430,7 +430,7 @@ const Form = ({
           />
           <InputGroup
             type="date"
-            name="representBirthday"
+            name="represent.birthday"
             labelText="Birthday"
             disabled={disabled}
             required
@@ -438,7 +438,7 @@ const Form = ({
           />
           <InputGroup
             type="number"
-            name="representAge"
+            name="represent.age"
             labelText="Age"
             pattern="[0-9]{1,}"
             maxLength="3"
@@ -451,7 +451,7 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="representMaritalStatus"
+            name="represent.maritalStatus"
             list="maritalstatus"
             labelText="Marital Status"
             pattern="Married|Single|Widowed|Divorced"
@@ -462,7 +462,7 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="representOccupation"
+            name="represent.occupation"
             labelText="Occupation"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
@@ -472,7 +472,7 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="representCompany"
+            name="represent.company"
             labelText="Company"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
@@ -482,17 +482,17 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="representDirection"
+            name="represent.address"
             labelText="Address"
             pattern="[A-Za-z0-9 -.,]{1,}"
             maxLength="30"
             disabled={disabled}
             required
-            defaultValue={data ? data.represent.direction : ""}
+            defaultValue={data ? data.represent.address : ""}
           />
           <InputGroup
             type="number"
-            name="representPhoneNumber1"
+            name="represent.phoneNumber1"
             labelText="Phone Number 1"
             pattern="[0-9]{1,}"
             maxLength="11"
@@ -502,7 +502,7 @@ const Form = ({
           />
           <InputGroup
             type="number"
-            name="representPhoneNumber2"
+            name="represent.phoneNumber2"
             labelText="Phone Number 2"
             pattern="[0-9]{1,}"
             maxLength="11"

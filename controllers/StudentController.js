@@ -1,5 +1,6 @@
 const { writeFile, unlink, readdir } = require("fs").promises;
 const { join } = require("path");
+const { convertFormData } = require("../utils/convertFormData");
 
 const Student = require("../models/Student");
 const Parent = require("../models/Parent");
@@ -12,70 +13,27 @@ exports.create = async (req, res) => {
   try {
     const { body, file } = req;
 
-    const student = await Student.findOne({ name: body.name });
+    const { studentData, parentData, representData } = convertFormData(body);
+
+    const student = await Student.findOne({ name: studentData.name });
     if (student) {
       res.status(400).json({ message: "This student already exists" });
     } else {
-      //Create an base64 image from Buffer
-      const photo =
-        file && file.buffer ? Buffer.from(file.buffer).toString("base64") : "";
+      const { buffer } = file || {};
 
       const newStudent = new Student({
         photo: "",
-        name: body.name,
-        identification: body.identification,
-        sex: body.sex,
-        birthday: body.birthday,
-        birthplace: body.birthplace,
-        municipality: body.municipality,
-        country: body.country,
-        age: body.age,
-        weight: body.weight,
-        height: body.height,
-        shirtSize: body.shirtSize,
-        pantSize: body.pantSize,
-        shoeSize: body.shoeSize,
-        liveWithParents: body.liveWithParents,
-        direction: body.direction,
-        phoneNumber: body.phoneNumber,
-        impedimentToSports: body.impedimentToSports,
-        allergicTo: body.allergicTo,
-
-        represent: new Represent({
-          name: body.representName,
-          sex: body.representSex,
-          identification: body.representID,
-          birthday: body.representBirthday,
-          age: body.representAge,
-          maritalStatus: body.representMaritalStatus,
-          occupation: body.representOccupation,
-          company: body.representCompany,
-          direction: body.representDirection,
-          phoneNumber1: body.representPhoneNumber1,
-          phoneNumber2: body.representPhoneNumber2
-        }),
-
-        parent: new Parent({
-          name: body.parentName,
-          sex: body.parentSex,
-          identification: body.parentIdentification,
-          birthday: body.parentBirthday,
-          company: body.parentCompany,
-          maritalStatus: body.parentMaritalStatus,
-          occupation: body.parentOccupation,
-          direction: body.parentDirection,
-          phoneNumber1: body.parentPhoneNumber1,
-          phoneNumber2: body.parentPhoneNumber2,
-          liveWithKid: body.liveWithKid
-        })
+        ...studentData,
+        parent: new Parent({ ...parentData }),
+        represent: new Represent({ ...representData })
       });
 
-      if (photo) {
+      if (buffer) {
         const fileName = newStudent._id.toString();
         const fileExt = file.originalname.split(".")[1].toLowerCase();
         const path = `${filePath}${fileName}.${fileExt}`;
 
-        await writeFile(path, photo, "base64");
+        await writeFile(path, buffer, "binary");
 
         // https://jz-data-register.herokuapp.com/api/studentPhoto/:fileName
         newStudent.photo = `${domainURL}${fileName}.${fileExt}`;
@@ -140,7 +98,9 @@ exports.update = async (req, res) => {
     const { body, file, params } = req;
     const { id } = params;
 
-    const student = await Student.findByIdAndUpdate(id, body, {
+    const { studentData, parentData, representData } = convertFormData(body);
+
+    const student = await Student.findByIdAndUpdate(id, studentData, {
       new: true
     });
 
@@ -148,36 +108,14 @@ exports.update = async (req, res) => {
       res.status(404).json({ message: "This student does not exist" });
     } else {
       //Create an base64 image from Buffer
-      const photo =
-        file && file.buffer ? Buffer.from(file.buffer).toString("base64") : "";
+      const { buffer } = file || {};
 
-      //Represent data
-      student.represent.name = body.representName;
-      student.represent.sex = body.representSex;
-      student.represent.identification = body.representID;
-      student.represent.birthday = body.representBirthday;
-      student.represent.age = body.representAge;
-      student.represent.maritalStatus = body.representMaritalStatus;
-      student.represent.occupation = body.representOccupation;
-      student.represent.company = body.representCompany;
-      student.represent.direction = body.representDirection;
-      student.represent.phoneNumber1 = body.representPhoneNumber1;
-      student.represent.phoneNumber2 = body.representPhoneNumber2;
+      // Updating parent's data
+      student.parent = { ...parentData };
+      // Updating representative's data
+      student.represent = { ...representData };
 
-      //parent data
-      student.parent.name = body.parentName;
-      student.parent.sex = body.parentSex;
-      student.parent.identification = body.parentIdentification;
-      student.parent.birthday = body.parentBirthday;
-      student.parent.company = body.parentCompany;
-      student.parent.maritalStatus = body.parentMaritalStatus;
-      student.parent.occupation = body.parentOccupation;
-      student.parent.direction = body.parentDirection;
-      student.parent.phoneNumber1 = body.parentPhoneNumber1;
-      student.parent.phoneNumber2 = body.parentPhoneNumber2;
-      student.parent.liveWithKid = body.liveWithKid;
-
-      if (photo) {
+      if (buffer) {
         const files = await readdir(filePath);
         // Name of the image that will be uploaded
         const fileName = student._id.toString();
@@ -193,21 +131,21 @@ exports.update = async (req, res) => {
 
             if (fileName === fileName2) {
               if (fileExt === fileExt2) {
-                await writeFile(path, photo, "base64");
+                await writeFile(path, buffer, "base64");
               } else {
                 await unlink(`${filePath}${files[i]}`);
-                await writeFile(path, photo, "base64");
+                await writeFile(path, buffer, "base64");
               }
 
               break;
             }
 
             if (i === files.length - 1 && fileName !== fileName2) {
-              await writeFile(path, photo, "base64");
+              await writeFile(path, buffer, "base64");
             }
           }
         } else {
-          await writeFile(path, photo, "base64");
+          await writeFile(path, buffer, "base64");
         }
 
         // https://jz-data-register.herokuapp.com/api/studentPhoto/:fileName

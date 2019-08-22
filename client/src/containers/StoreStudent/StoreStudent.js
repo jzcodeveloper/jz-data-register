@@ -38,12 +38,34 @@ const StoreStudent = ({ history }) => {
     const formData = new FormData();
     const file = files && files[0] ? files[0] : null;
 
-    //Appends file input value into the formData
-    formData.append("photo", file);
+    //Appends input values into the formData
+    for (let i = 0; i < elements.length - 1; i++) {
+      const { name, value } = elements[i];
 
-    //Appends other input values into the formData
-    for (let i = 1; i < elements.length - 1; i++) {
-      formData.append(elements[i].name, elements[i].value);
+      if (name === "photo") {
+        formData.append(name, file);
+        continue;
+      }
+
+      formData.append(name, value);
+
+      /* if (name.indexOf("student.") >= 0) {
+        const [, fieldName] = name.split(".");
+        studentData[fieldName] = value;
+        continue;
+      }
+
+      if (name.indexOf("parent.") >= 0) {
+        const [, fieldName] = name.split(".");
+        parentData[fieldName] = value;
+        continue;
+      }
+
+      if (name.indexOf("represent.") >= 0) {
+        const [, fieldName] = name.split(".");
+        representData[fieldName] = value;
+        continue;
+      } */
     }
 
     setState({ name: elements[1].value, showConfirmation: true, formData });
