@@ -39,7 +39,7 @@ exports.create = async (req, res) => {
         direction: body.direction,
         phoneNumber: body.phoneNumber,
         impedimentToSports: body.impedimentToSports,
-        alergicTo: body.alergicTo,
+        allergicTo: body.allergicTo,
 
         represent: new Represent({
           name: body.representName,

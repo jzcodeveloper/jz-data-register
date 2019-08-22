@@ -259,13 +259,13 @@ const Form = ({
           />
           <InputGroup
             type="text"
-            name="alergicTo"
+            name="allergicTo"
             labelText="Alergic To"
             pattern="[A-Za-z ]{1,}"
             maxLength="30"
             disabled={disabled}
             required
-            defaultValue={data ? data.alergicTo : ""}
+            defaultValue={data ? data.allergicTo : ""}
           />
           <div />
           <div />

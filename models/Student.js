@@ -100,9 +100,9 @@ const studentSchema = new Schema({
     required: [true, "The impediment to make sports field is needed"]
   },
 
-  alergicTo: {
+  allergicTo: {
     type: String,
-    required: [true, "The alergic to field is needed"]
+    required: [true, "The allergic to field is needed"]
   },
 
   date: {
