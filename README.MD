@@ -1,5 +1,9 @@
 # JZ Data Register
 
+# Description:
+
+Web application that stores student's enrollment information in order to automate manual hand-written enrollment, made for a primary school.
+
 # This applications uses the following technologies:
 
 - MongoDB (Database)
