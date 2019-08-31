@@ -11,4 +11,10 @@ Web application that stores student's enrollment information in order to automat
 - ReactJS (Front-end Framework)
 - NodeJS (Back-end Environment)
 - Redux (State management)
+- Workbox (Offline Support)
+
+# This application offers the following features:
+
 - Mobile First Design (Styling)
+- Offline Support (Static And Dynamic Caching)
+- Background Sync (Requests Caching)

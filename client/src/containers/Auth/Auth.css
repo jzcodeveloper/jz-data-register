@@ -8,7 +8,7 @@
   flex: 1;
   display: none;
   position: relative;
-  background: url("../../assets/background-home.jpeg") no-repeat;
+  background: url("../../images/background-home.jpeg") no-repeat;
   background-size: cover;
   background-position: center;
 }

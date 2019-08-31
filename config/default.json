@@ -1,5 +1,6 @@
 {
   "mongoURI": "mongodb://localhost:27017/jz-data-register",
   "jwtSecret": "secret",
-  "expiresIn": 3600
+  "expiresIn": 3600,
+  "baseURL": "http://localhost:5002/api"
 }

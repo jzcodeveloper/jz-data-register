@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import avatar from "../../../assets/avatar.png";
+import avatar from "../../../images/avatar.png";
 
 const Result = ({ className, onClick, photo, name }) => {
   return (

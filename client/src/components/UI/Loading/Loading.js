@@ -1,7 +1,7 @@
 import React from "react";
 
 import classes from "./Loading.css";
-import icon from "../../../assets/logo-school.png";
+import icon from "../../../images/logo-school.png";
 
 const Loading = () => (
   <div className={classes.Modal}>

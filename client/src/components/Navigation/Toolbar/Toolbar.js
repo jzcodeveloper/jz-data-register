@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
 import classes from "./Toolbar.css";
-import icon from "../../../assets/logo-school.png";
+import icon from "../../../images/logo-school.png";
 import NavigationItems from "../NavigationItems/NavigationItems";
 
 const Toolbar = ({ toggleSide }) => {

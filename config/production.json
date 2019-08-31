@@ -1,5 +1,6 @@
 {
   "mongoURI": "mongodb://Javier:jzdr123@ds157956.mlab.com:57956/jz-data-register",
   "jwtSecret": "jz-data-register-secret",
-  "expiresIn": 3600
+  "expiresIn": 3600,
+  "baseURL": "https://jz-data-register.herokuapp.com/api"
 }

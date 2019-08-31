@@ -6,7 +6,7 @@ import { login } from "../../../store/actions/authActions";
 import { setErrors } from "../../../store/actions/errorsActions";
 
 import classes from "./Login.css";
-import avatar from "../../../assets/avatar.png";
+import avatar from "../../../images/avatar.png";
 
 const Login = () => {
   const dispatch = useDispatch();

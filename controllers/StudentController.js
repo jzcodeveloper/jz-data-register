@@ -6,8 +6,9 @@ const Student = require("../models/Student");
 const Parent = require("../models/Parent");
 const Represent = require("../models/Represent");
 
-const filePath = join(__dirname, "../assets/studentPhotos/");
-const domainURL = `https://jz-data-register.herokuapp.com/api/students/getPhoto/`;
+const config = require("config");
+const filePath = join(__dirname, "../uploads/studentPhotos/");
+const domainURL = `${config.get("baseURL")}/students/getPhoto/`;
 
 exports.create = async (req, res) => {
   try {
@@ -86,7 +87,7 @@ exports.getAll = async (req, res) => {
 exports.getPhoto = async (req, res) => {
   try {
     const { fileName } = req.params;
-    res.sendFile(join(__dirname, `../assets/studentPhotos/${fileName}`));
+    res.sendFile(join(filePath, fileName));
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Internal Server Error" });
