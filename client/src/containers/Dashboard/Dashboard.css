@@ -1,6 +1,7 @@
 .Dashboard {
   display: flex;
   flex-flow: column;
+  min-height: calc(100vh - 120px);
 }
 
 .storeStudent {
@@ -21,7 +22,7 @@
 
 .Dashboard > div {
   position: relative;
-  height: 230px;
+  min-height: 230px;
   margin: 20px;
   color: rgba(0, 0, 0, 0.9);
   text-align: center;
@@ -34,16 +35,16 @@
 
 .Overlay {
   background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
   position: absolute;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border-radius: 20px;
-}
-
-.Dashboard i {
-  margin-top: 20px;
 }
 
 .Store {
@@ -64,7 +65,7 @@
 
 .Dashboard a {
   display: block;
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
   text-transform: uppercase;
   text-decoration: none;
   color: white;
