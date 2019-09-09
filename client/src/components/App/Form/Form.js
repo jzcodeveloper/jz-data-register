@@ -1,7 +1,6 @@
 import React from "react";
 
 import avatar from "../../../images/avatar.png";
-
 import classes from "./Form.css";
 import InputGroup from "./InputGroup/InputGroup";
 
