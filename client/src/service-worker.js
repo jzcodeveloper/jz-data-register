@@ -29,7 +29,7 @@ workbox.routing.registerRoute(
 ///// DYNAMIC CACHING - IMAGES /////
 ////////////////////////////////////
 workbox.routing.registerRoute(
-  /\.(?:jpg|jpeg|png)$/,
+  /.*\.(?:jpg|jpeg|png)$/,
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: "images",
     plugins: [
