@@ -10,28 +10,13 @@ workbox.core.clientsClaim();
 ///////////////////////////////////
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-///////////////////////////////////
-///// DYNAMIC CACHING - FONTS /////
-///////////////////////////////////
-workbox.routing.registerRoute(
-  /.*fontawesome\.com.*/,
-  new workbox.strategies.CacheFirst({
-    cacheName: "fonts",
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxAgeSeconds: 60 * 60 * 24 * 30
-      })
-    ]
-  })
-);
-
 ////////////////////////////////////
 ///// DYNAMIC CACHING - IMAGES /////
 ////////////////////////////////////
 workbox.routing.registerRoute(
-  /.*\.(?:jpg|jpeg|png)$/,
+  /.*\.(?:jpe?g|png)$/,
   new workbox.strategies.StaleWhileRevalidate({
-    cacheName: "images",
+    cacheName: "photos",
     plugins: [
       new workbox.expiration.Plugin({
         maxEntries: 20
@@ -46,6 +31,7 @@ workbox.routing.registerRoute(
 const networkWithBackgroundSync = new workbox.strategies.NetworkOnly({
   plugins: [
     new workbox.backgroundSync.Plugin("sync", {
+      /* 24 hours */
       maxRetentionTime: 60 * 24
     })
   ]

@@ -27,7 +27,10 @@
   },
   "nodemonConfig": {
     "ignore": [
-      "client/*"
+      "client/*",
+      "node_modules/*",
+      "package-lock.json",
+      "yarn.lock"
     ]
   }
 }
