@@ -2,7 +2,7 @@
   "short_name": "JZ Data Register",
   "name": "JZ Data Register",
   "description": "Web application that stores student's enrollment information in order to automate manual hand-written enrollment, made for a primary school.",
-  "start_url": "/index.html",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "green",
   "background_color": "#ffffff",
