@@ -5,18 +5,21 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   name: {
     type: String,
-    required: [true, "The name is obligatory"]
+    maxLength: 30,
+    required: [true, "The name is required"]
   },
 
   email: {
     type: String,
-    required: [true, "The email is obligatory"],
+    required: [true, "The email is required"],
+    maxLength: 60,
     unique: true
   },
 
   password: {
     type: String,
-    required: [true, "The password is obligatory"]
+    maxLength: 60,
+    required: [true, "The password is required"]
   },
 
   online: {

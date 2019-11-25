@@ -12,7 +12,7 @@ const Auth = () => {
       <div className={classes.LeftSection}>
         <div className={classes.Overlay}>
           <div>
-            <p>JZ Data Register</p>
+            <h1>JZ Data Register</h1>
             <p>
               This application allows you to register students enrollment
               information by performing actions such as Create, Read, Update and

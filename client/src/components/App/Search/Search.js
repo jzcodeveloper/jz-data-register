@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import classes from "./Search.css";
 
@@ -12,24 +12,22 @@ const Search = ({
   close
 }) => {
   return (
-    <Fragment>
-      <section className={classes.Search}>
-        <i
-          className={`fas fa-arrow-circle-left ${classes.Icon}`}
-          onClick={close}
-        />
-        <input
-          type="search"
-          placeholder={`Search ${path}...`}
-          onChange={onChange}
-          onKeyDown={onKeyDown}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          value={value || ""}
-          autoFocus
-        />
-      </section>
-    </Fragment>
+    <section className={classes.Search}>
+      <i
+        className={`fas fa-arrow-circle-left ${classes.Icon}`}
+        onClick={close}
+      />
+      <input
+        type="search"
+        placeholder={`Search ${path}...`}
+        onChange={onChange}
+        onKeyDown={onKeyDown}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        value={value || ""}
+        autoFocus
+      />
+    </section>
   );
 };
 

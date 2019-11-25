@@ -11,22 +11,26 @@ const validSexTypes = {
 
 const studentSchema = new Schema({
   photo: {
-    type: String
+    type: String,
+    maxLength: 100
   },
 
   name: {
     type: String,
+    maxLength: 30,
     required: [true, "The name field is needed"]
   },
 
   identification: {
     type: Number,
+    max: 100000000,
     required: [true, "The identification field is needed"]
   },
 
   sex: {
     type: String,
     enum: validSexTypes,
+    maxLength: 10,
     required: [true, "The sex field is needed"]
   },
 
@@ -37,71 +41,85 @@ const studentSchema = new Schema({
 
   birthplace: {
     type: String,
+    maxLength: 30,
     required: [true, "The birthplace field is needed"]
   },
 
   municipality: {
     type: String,
+    maxLength: 30,
     required: [true, "The municipality field is needed"]
   },
 
   country: {
     type: String,
+    maxLength: 30,
     required: [true, "The country is needed"]
   },
 
   age: {
     type: Number,
+    max: 150,
     required: [true, "The age field is needed"]
   },
 
   weight: {
     type: Number,
+    max: 600,
     required: [true, "The weight field is needed"]
   },
 
   height: {
     type: Number,
+    max: 300,
     required: [true, "The height field is needed"]
   },
 
   shirtSize: {
     type: String,
+    maxLength: 3,
     required: [true, "The size of the shirt field is needed"]
   },
 
   pantSize: {
     type: Number,
+    max: 50,
     required: [true, "The size of the pants field is needed"]
   },
 
   shoeSize: {
     type: Number,
+    max: 50,
     required: [true, "The size of the shoes field is needed"]
   },
 
   livesWithParents: {
     type: String,
+    maxLength: 3,
     required: [true, "The lives with parents field is needed"]
   },
 
   address: {
     type: String,
+    maxLength: 50,
     required: [true, "The address field is needed"]
   },
 
   phoneNumber: {
     type: Number,
+    max: 99999999999,
     required: [true, "The phone number field is needed"]
   },
 
   impedimentToSports: {
     type: String,
+    maxLength: 30,
     required: [true, "The impediment to make sports field is needed"]
   },
 
   allergicTo: {
     type: String,
+    maxLength: 30,
     required: [true, "The allergic to field is needed"]
   },
 

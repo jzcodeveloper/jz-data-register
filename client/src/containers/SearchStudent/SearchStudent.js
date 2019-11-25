@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import {
@@ -77,7 +77,7 @@ const SearchStudent = ({ history }) => {
   };
 
   return (
-    <Fragment>
+    <>
       {showSearch ? (
         <Search
           onChange={onChange}
@@ -98,14 +98,14 @@ const SearchStudent = ({ history }) => {
       {loading ? (
         <Spinner />
       ) : (
-        <Fragment>
+        <>
           {results ? (
-            <Fragment>
+            <>
               {results.length > 0 ? (
-                <Fragment>
+                <>
                   <div className={classes.QuickResults}>
                     {focus ? (
-                      <Fragment>
+                      <>
                         {quickResults.map(({ _id, name, photo }) => (
                           <Result
                             key={_id}
@@ -115,7 +115,7 @@ const SearchStudent = ({ history }) => {
                             name={name}
                           />
                         ))}
-                      </Fragment>
+                      </>
                     ) : null}
                   </div>
 
@@ -130,17 +130,17 @@ const SearchStudent = ({ history }) => {
                       />
                     ))}
                   </div>
-                </Fragment>
+                </>
               ) : (
                 <NotFound msg="Nothing here, try another search" />
               )}
-            </Fragment>
+            </>
           ) : (
             <Spinner />
           )}
-        </Fragment>
+        </>
       )}
-    </Fragment>
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Provider } from "react-redux";
 import {
   BrowserRouter as Router,
@@ -47,11 +47,11 @@ const App = () => {
         {loading ? (
           <Loading />
         ) : (
-          <Fragment>
+          <>
             {path === "print" ? (
               <Print />
             ) : (
-              <Fragment>
+              <>
                 <Toolbar toggleSide={toggleSideDrawer} />
                 <SideDrawer show={showSide} close={closeSideDrawer} />
                 <Notification />
@@ -64,9 +64,9 @@ const App = () => {
                   <Route component={Routes} />
                 </Switch>
                 <Footer />
-              </Fragment>
+              </>
             )}
-          </Fragment>
+          </>
         )}
       </Router>
     </Provider>

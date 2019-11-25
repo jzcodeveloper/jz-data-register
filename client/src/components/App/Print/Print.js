@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { fetchStudent } from "../../../store/actions/studentActions";
@@ -23,7 +23,7 @@ const Print = () => {
   }, []);
 
   return (
-    <Fragment>
+    <>
       {loading || !student ? <Spinner /> : null}
 
       {student ? (
@@ -31,7 +31,7 @@ const Print = () => {
           <Form disabled data={student} hideButton />
         </div>
       ) : null}
-    </Fragment>
+    </>
   );
 };
 

@@ -15,17 +15,20 @@ const validMaritalStatus = {
 const representSchema = new Schema({
   name: {
     type: String,
+    maxLength: 30,
     required: [true, "The represent name field is needed"]
   },
 
   sex: {
     type: String,
     enum: validSexType,
+    maxLength: 10,
     required: [true, "The sex field is needed"]
   },
 
   identification: {
     type: Number,
+    max: 99999999,
     required: [true, "The identification field is needed"]
   },
 
@@ -36,37 +39,44 @@ const representSchema = new Schema({
 
   age: {
     type: Number,
+    max: 150,
     required: [true, "The age is needed"]
   },
 
   maritalStatus: {
     type: String,
+    maxLength: 10,
     required: [true, "The civil state is needed"],
     enum: validMaritalStatus
   },
 
   occupation: {
     type: String,
+    maxLength: 30,
     required: [true, "The occupation field is needed"]
   },
 
   company: {
     type: String,
+    maxLength: 30,
     required: [true, "The company field is needed"]
   },
 
   address: {
     type: String,
+    maxLength: 30,
     required: [true, "The address field is needed"]
   },
 
   phoneNumber1: {
     type: Number,
+    max: 99999999999,
     required: [true, "The first phone number is needed"]
   },
 
   phoneNumber2: {
     type: Number,
+    max: 99999999999,
     required: false
   }
 });

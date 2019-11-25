@@ -13,15 +13,16 @@
   background-position: center;
 }
 
-.LeftSection > div > div p {
+.LeftSection > div > div p,
+.LeftSection > div > div h1 {
   margin: 0;
   text-align: center;
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
   padding: 20px;
   box-sizing: border-box;
 }
 
-.LeftSection > div > div p:nth-child(1) {
+.LeftSection > div > div h1 {
   font-size: 3em;
 }
 
